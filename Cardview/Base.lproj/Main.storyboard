@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,109 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Cardview" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gB3-1H-57D">
+                                <rect key="frame" x="0.0" y="90" width="375" height="577"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="wDO-Nq-bl9">
+                                    <size key="itemSize" width="292" height="278"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="kbv-eZ-mMG">
+                                        <rect key="frame" x="41.5" y="0.0" width="292" height="278"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="292" height="278"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6He-mU-iur" customClass="CardView" customModule="Cardview" customModuleProvider="target">
+                                                    <rect key="frame" x="29" y="21" width="234" height="236.5"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gradient_people_bg" translatesAutoresizingMaskIntoConstraints="NO" id="sFc-lo-DJs">
+                                                            <rect key="frame" x="0.0" y="0.0" width="235" height="151"/>
+                                                        </imageView>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="UYy-5W-sat">
+                                                            <rect key="frame" x="11.5" y="172" width="211.5" height="41.5"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Titulo do cartao" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oKY-6L-gn7">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="121" height="20.5"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="texto de subtítulo do cartão" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wCO-P9-7Bp">
+                                                                    <rect key="frame" x="0.0" y="25.5" width="167.5" height="16"/>
+                                                                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
+                                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstItem="sFc-lo-DJs" firstAttribute="centerY" secondItem="6He-mU-iur" secondAttribute="centerY" multiplier="0.64" id="669-o1-rDz"/>
+                                                        <constraint firstItem="UYy-5W-sat" firstAttribute="width" secondItem="sFc-lo-DJs" secondAttribute="width" multiplier="0.9" id="H7H-Z0-wIu"/>
+                                                        <constraint firstItem="UYy-5W-sat" firstAttribute="centerX" secondItem="6He-mU-iur" secondAttribute="centerX" id="Lxf-Dp-IMp"/>
+                                                        <constraint firstItem="sFc-lo-DJs" firstAttribute="height" secondItem="6He-mU-iur" secondAttribute="height" multiplier="0.64" id="aTt-uM-bli"/>
+                                                        <constraint firstItem="UYy-5W-sat" firstAttribute="top" secondItem="sFc-lo-DJs" secondAttribute="bottom" constant="21" id="l3O-A4-rFW"/>
+                                                        <constraint firstItem="sFc-lo-DJs" firstAttribute="width" secondItem="6He-mU-iur" secondAttribute="width" multiplier="1.001" id="n1g-jm-WeX"/>
+                                                        <constraint firstItem="sFc-lo-DJs" firstAttribute="centerX" secondItem="6He-mU-iur" secondAttribute="centerX" id="pGr-0C-1Qy"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="6He-mU-iur" firstAttribute="height" secondItem="kbv-eZ-mMG" secondAttribute="height" multiplier="0.85" id="LE7-CH-eao"/>
+                                            <constraint firstItem="6He-mU-iur" firstAttribute="centerX" secondItem="kbv-eZ-mMG" secondAttribute="centerX" id="gpK-Bf-s6F"/>
+                                            <constraint firstItem="6He-mU-iur" firstAttribute="centerY" secondItem="kbv-eZ-mMG" secondAttribute="centerY" id="kJA-a4-8vy"/>
+                                            <constraint firstItem="6He-mU-iur" firstAttribute="width" secondItem="kbv-eZ-mMG" secondAttribute="width" multiplier="0.8" id="zBO-Sa-dA9"/>
+                                        </constraints>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="rBq-fH-Q5g">
+                                <rect key="frame" x="46" y="34" width="282" height="29"/>
+                                <segments>
+                                    <segment title="Vertical"/>
+                                    <segment title="Horizontal"/>
+                                </segments>
+                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="segmentedBarAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="c0Z-Qv-cQs"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="gB3-1H-57D" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="4aN-S1-mzI"/>
+                            <constraint firstItem="rBq-fH-Q5g" firstAttribute="height" secondItem="gB3-1H-57D" secondAttribute="height" multiplier="0.06" constant="-6.6199999999999974" id="AQX-Qe-iyn"/>
+                            <constraint firstItem="rBq-fH-Q5g" firstAttribute="centerY" secondItem="gB3-1H-57D" secondAttribute="centerY" multiplier="0.11" constant="6.365000000000002" id="Exa-tN-Upd"/>
+                            <constraint firstItem="gB3-1H-57D" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.698" constant="111.43400000000003" id="OHP-Vp-Hqe"/>
+                            <constraint firstItem="gB3-1H-57D" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="PIo-jx-PcI"/>
+                            <constraint firstItem="rBq-fH-Q5g" firstAttribute="width" secondItem="gB3-1H-57D" secondAttribute="width" multiplier="0.75" id="hSD-yN-XvB"/>
+                            <constraint firstItem="gB3-1H-57D" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" multiplier="1.267" constant="-56.714499999999987" id="xaH-qg-C8c"/>
+                            <constraint firstItem="rBq-fH-Q5g" firstAttribute="centerX" secondItem="gB3-1H-57D" secondAttribute="centerX" id="y65-DH-dzt"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="cardCollectionView" destination="gB3-1H-57D" id="H8Z-bJ-UQi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="gradient_people_bg" width="798" height="441"/>
+    </resources>
 </document>
